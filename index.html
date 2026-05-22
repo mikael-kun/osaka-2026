@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Osaka 旅日記 · May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EFEAE0;
+    --paper-deep: #E5DFD2;
+    --ink: #1F1B16;
+    --ink-soft: #4A433A;
+    --muted: #8A8275;
+    --rule: #C8BFAE;
+    --bengara: #8B3A2F;
+    --bengara-soft: #B5654F;
+    --gold: #A78A4D;
+    --shoji: #F8F4EA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 80% 10%, rgba(139, 58, 47, 0.04), transparent 50%),
+      radial-gradient(circle at 20% 90%, rgba(31, 27, 22, 0.05), transparent 60%);
+    min-height: 100vh;
+    padding: 0 0 4rem;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 0;
+  }
+
+  /* ─── HEADER ─────────────────────────────────────── */
+  header {
+    border-top: 3px double var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 1.5rem 0 1.75rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bengara);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .eyebrow .right { color: var(--muted); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 7.5vw, 3.6rem);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.25rem;
+  }
+  h1 em {
+    font-family: 'Noto Serif JP', serif;
+    font-style: normal;
+    color: var(--bengara);
+    font-weight: 400;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    margin-left: 0.4rem;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-top: 0.85rem;
+    letter-spacing: 0.01em;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+  @media (min-width: 540px) {
+    .meta { grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1.5rem; }
+  }
+  .meta div { display: flex; gap: 0.6rem; }
+  .meta .k { color: var(--muted); min-width: 5.5rem; }
+
+  /* ─── SECTION HEADINGS ───────────────────────────── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 3rem 0 1.5rem;
+  }
+  .section-head .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--bengara);
+    letter-spacing: 0.15em;
+  }
+  .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: -0.005em;
+  }
+  .section-head .jp {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    margin-left: auto;
+  }
+
+  /* ─── LOGGED INDEX ───────────────────────────────── */
+  .logged-index {
+    background: var(--shoji);
+    border: 1px solid var(--rule);
+    padding: 1.1rem 1.3rem 1.25rem;
+    position: relative;
+  }
+  .logged-index::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 3px;
+    background: var(--bengara);
+  }
+  .logged-index ul { list-style: none; }
+  .logged-index li {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: 0.85rem;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .logged-index li:last-child { border-bottom: none; }
+  .logged-index .li-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .logged-index .li-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+  .logged-index .li-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ─── ENTRY ──────────────────────────────────────── */
+  .entries { display: flex; flex-direction: column; }
+  .entry {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+  .entry:last-child { border-bottom: 1px solid var(--rule); }
+  .entry-date {
+    text-align: right;
+    border-right: 1px solid var(--rule);
+    padding-right: 1.25rem;
+  }
+  .entry-date .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--bengara);
+  }
+  .entry-date .dow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+  }
+  .entry-date .jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
+  }
+  .entry-body { padding-top: 0.2rem; position: relative; }
+  .entry-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bengara);
+    margin-bottom: 0.55rem;
+    padding: 0.15rem 0.5rem 0.15rem 0;
+    border-bottom: 1px solid var(--bengara-soft);
+  }
+  .entry-weather {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .entry-weather .jp {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--bengara);
+    margin-right: 0.4rem;
+  }
+  .entry h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .entry p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+  }
+  .entry p:last-of-type { margin-bottom: 0; }
+  .entry p em {
+    font-style: italic;
+    color: var(--bengara);
+  }
+
+  /* ─── MARGINALIA ─────────────────────────────────── */
+  .marginalia {
+    margin: 1rem 0 0.5rem;
+    padding: 0.75rem 1rem 0.85rem;
+    background: var(--shoji);
+    border-left: 3px solid var(--bengara);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .marginalia .label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bengara);
+    margin-bottom: 0.35rem;
+  }
+
+  /* ─── PHOTOS ─────────────────────────────────────── */
+  figure { margin: 0; }
+  figure img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--rule);
+    box-shadow: 0 2px 12px rgba(31, 27, 22, 0.10);
+    background: var(--shoji);
+  }
+  figcaption {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.45rem;
+    line-height: 1.4;
+  }
+  figcaption::before {
+    content: '— ';
+  }
+  .photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    margin: 1.3rem 0;
+  }
+  .photo-feature {
+    margin: 1.5rem 0;
+  }
+  .photo-closing {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--bengara);
+    margin: 1.9rem 0 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .noticed-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-top: 0.85rem;
+  }
+  .noticed-thumbs img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    box-shadow: 0 1px 6px rgba(31, 27, 22, 0.08);
+  }
+  .noticed-thumbs figure { margin: 0; }
+
+  /* ─── HANKO STAMP (LOGGED) ───────────────────────── */
+  .hanko {
+    position: absolute;
+    top: 0.25rem;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--bengara);
+    border-radius: 50%;
+    color: var(--bengara);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-8deg);
+    opacity: 0.85;
+    font-weight: 500;
+  }
+
+  /* ─── COMING UP ──────────────────────────────────── */
+  .upcoming {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .upcoming-item {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.25rem;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .upcoming-item:last-child { border-bottom: none; }
+  .upcoming-item .u-date {
+    text-align: right;
+    padding-right: 1.25rem;
+    border-right: 1px solid var(--rule);
+  }
+  .upcoming-item .u-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .upcoming-item .u-dow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+  .upcoming-item .u-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  footer .seal {
+    display: inline-block;
+    margin: 0.75rem auto 0;
+    padding: 0.4rem 0.7rem;
+    border: 1.5px solid var(--bengara);
+    color: var(--bengara);
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.3em;
+    font-size: 0.7rem;
+  }
+
+  /* ─── FLOURISH ───────────────────────────────────── */
+  .flourish {
+    text-align: center;
+    margin: 2rem 0 0;
+    font-family: 'Noto Serif JP', serif;
+    color: var(--bengara);
+    font-size: 1.1rem;
+    letter-spacing: 1.5rem;
+    padding-left: 1.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="eyebrow">
+      <span>Travel Journal · Family Trip</span>
+      <span class="right">No. 2026 / V</span>
+    </div>
+    <h1>Osaka <em>旅日記</em></h1>
+    <div class="subtitle">a living document — entered in the evenings</div>
+    <div class="meta">
+      <div><span class="k">Travelers</span><span>Mikael · Mira · 父 · 母</span></div>
+      <div><span class="k">Dates</span><span>10 — 21 May 2026</span></div>
+      <div><span class="k">Base</span><span>KEE'S COZY HOME · Kujo</span></div>
+      <div><span class="k">Logged</span><span>12 of 12 days · complete</span></div>
+    </div>
+  </header>
+
+  <!-- LOGGED INDEX -->
+  <div class="section-head">
+    <span class="num">I</span>
+    <h2>Logged</h2>
+    <span class="jp">記録</span>
+  </div>
+  <div class="logged-index">
+    <ul>
+      <li>
+        <span class="li-date">10</span>
+        <span class="li-title">A lovely first night · Suisei</span>
+        <span class="li-meta">Sun</span>
+      </li>
+      <li>
+        <span class="li-date">11</span>
+        <span class="li-title">Errands and arcades · Shinsaibashi</span>
+        <span class="li-meta">Mon</span>
+      </li>
+      <li>
+        <span class="li-date">12</span>
+        <span class="li-title">Still groggy · Matsuoka-san & a small bar</span>
+        <span class="li-meta">Tue</span>
+      </li>
+      <li>
+        <span class="li-date">13</span>
+        <span class="li-title">The day before Sanda · documents & Daiso</span>
+        <span class="li-meta">Wed</span>
+      </li>
+      <li>
+        <span class="li-date">14</span>
+        <span class="li-title">Sanda · the settlement, and family</span>
+        <span class="li-meta">Thu</span>
+      </li>
+      <li>
+        <span class="li-date">15</span>
+        <span class="li-title">Refiguring · Nishinomiya, vinyls, Molto!</span>
+        <span class="li-meta">Fri</span>
+      </li>
+      <li>
+        <span class="li-date">16</span>
+        <span class="li-title">Red steel, red bridge</span>
+        <span class="li-meta">Sat</span>
+      </li>
+      <li>
+        <span class="li-date">17</span>
+        <span class="li-title">The day before Yucho</span>
+        <span class="li-meta">Sun</span>
+      </li>
+      <li>
+        <span class="li-date">18</span>
+        <span class="li-title">Yucho · 解約, and Ohatsu</span>
+        <span class="li-meta">Mon</span>
+      </li>
+      <li>
+        <span class="li-date">19</span>
+        <span class="li-title">Nishinomiya · 戸籍, and Kujo Kimi</span>
+        <span class="li-meta">Tue</span>
+      </li>
+      <li>
+        <span class="li-date">20</span>
+        <span class="li-title">Kyoto · 着物, and obasan's tea set</span>
+        <span class="li-meta">Wed</span>
+      </li>
+      <li>
+        <span class="li-date">21</span>
+        <span class="li-title">Home · 帰国, and the two customs halls</span>
+        <span class="li-meta">Thu→Fri</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ENTRIES -->
+  <div class="section-head">
+    <span class="num">II</span>
+    <h2>Entries</h2>
+    <span class="jp">本文</span>
+  </div>
+
+  <div class="entries">
+
+    <!-- 10 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">10</div>
+        <div class="dow">Sun</div>
+        <div class="jp">日曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Arrival · Suisei</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>HEL → KIX · AY067 · clear in Osaka</div>
+        <h3>A lovely first night</h3>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-with-mom.jpg" alt="At the Helsinki gate with mother and Mira" />
+            <figcaption>Helsinki, before the flight.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-a350.jpeg" alt="Finnair A350 at the gate at Helsinki" />
+            <figcaption>The A350 at the gate.</figcaption>
+          </figure>
+        </div>
+
+        <p>Sunday. The A350 in the morning, mother and Mira at the gate. The long quiet hours over the pole, the kind of in-flight time that doesn't quite count as part of either country.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-plane-selfie.jpeg" alt="On the plane to Osaka" />
+          <figcaption>Somewhere mid-flight.</figcaption>
+        </figure>
+
+        <p>KIX in the early afternoon. By the time we reached Kujo, the light was already turning gold through the old streets nearby — that first walk through a Japanese neighborhood you've only seen in photos.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-matsushima.jpeg" alt="Matsushima district street scene" />
+          <figcaption>松島 · a few minutes from the apartment.</figcaption>
+        </figure>
+
+        <p>Five minutes to Suisei. A small father-and-son shop on a quiet street. No menu. Counter seats. The omakase came one piece at a time — unfolding the way these places do, without explanation or fuss.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-suisei-couple.jpeg" alt="Mikael and Mira at Suisei" />
+          <figcaption>At Suisei, shoji light behind us.</figcaption>
+        </figure>
+
+        <figure class="photo-feature">
+          <img src="photo-uni.jpeg" alt="Uni gunkan at the Suisei counter" />
+          <figcaption>Uni · the one we'll remember.</figcaption>
+        </figure>
+
+        <div class="photo-closing">"So lovely."</div>
+
+        <div class="marginalia">
+          <span class="label">noticed in passing</span>
+          A Japanese tote brand calling itself <em>Väska by moz</em>, dressed in the Swedish flag and the line <em>"Nära naturen, nära varandra"</em> · a row of Aloha gnomes on a shelf somewhere, perfectly out of place
+          <div class="noticed-thumbs">
+            <figure><img src="photo-vaska.jpeg" alt="Väska by moz bag" /></figure>
+            <figure><img src="photo-aloha-gnomes.jpeg" alt="Aloha gnomes on a shelf" /></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">11</div>
+        <div class="dow">Mon</div>
+        <div class="jp">月曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Errands · Aeon · Shinsaibashi</span>
+        <div class="entry-weather"><span class="jp">朝寝坊</span>slow start · jet lag still in the legs</div>
+        <h3>Errands and arcades</h3>
+
+        <p>Monday. Woke late — jet lag still in the legs. Morning went on errands: the bank, paying the 不動産屋 and 司法書士 fees that sit underneath Wednesday's settlement in Sanda. The kind of paperwork that makes a trip feel real rather than imagined.</p>
+
+        <p>Lunch at Aeon Mall, Dome-mae — air-conditioned, everything under one roof. The right move with everyone still recovering. Back to Kujo for a light dinner cooked at the apartment.</p>
+
+        <p>In the evening, just Mira and I out to Shinsaibashi and Dotonbori. The arcade was wall-to-wall tourists — that Osaka density after dark, neon over crowds, sound bouncing off the segmented roof. Picked up a shirt-and-overshirt combination at Wego.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-shinsaibashi-crowd.jpeg" alt="Shinsaibashi arcade crowd at night" />
+            <figcaption>Shinsaibashi, after dark.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-shinsaibashi-arcade.jpeg" alt="Shinsaibashi covered arcade ceiling" />
+            <figcaption>The roof, the crowd.</figcaption>
+          </figure>
+        </div>
+
+        <div class="photo-closing">A second day in the slow gear.</div>
+      </div>
+    </article>
+
+    <!-- 12 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">12</div>
+        <div class="dow">Tue</div>
+        <div class="jp">火曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Matsuoka-san · Bic Camera · a small bar</span>
+        <div class="entry-weather"><span class="jp">ぼんやり</span>still groggy · jet lag in the legs</div>
+        <h3>Still groggy</h3>
+
+        <p>Tuesday. Still groggy — the jet lag refusing to lift on schedule. Settled last night that the international wire needs the main post office, dad present at the counter; that goes on tomorrow's list.</p>
+
+        <p>Today was Matsuoka-san. The insurance man came by the Airbnb to walk us through the return of the ten months' overpay. The trickiest part was geographic: trying to explain Nishi-ku Kujo when half the city hears Nishikujo — different ward, across the river, a perennial source of confusion we now own. After he left, finished the 司法書士 transfer at the local post bank.</p>
+
+        <p>Then to Bic Camera. Mum got her new iPhone. Back to the apartment for a long rest.</p>
+
+        <p>Later, just Mira and I out for a wander, and we stumbled into a small bar a few minutes from the Airbnb — Hoodie by Chicherone, owner-designer, the kind of low-key curated room you only find by walking. Thinking of t-shirts as gifts to bring home.</p>
+
+        <div class="marginalia">
+          <span class="label">to revisit</span>
+          Hoodie by Chicherone · small bar near the apartment, designer-owned · t-shirts as gifts for home · <em>@hoodie_by_chicherone</em>
+        </div>
+      </div>
+    </article>
+
+    <!-- 13 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">13</div>
+        <div class="dow">Wed</div>
+        <div class="jp">水曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Donki · Parco · Daiso · documents</span>
+        <div class="entry-weather"><span class="jp">ぼんやり</span>still adjusting to the time difference</div>
+        <h3>The day before Sanda</h3>
+
+        <p>Wednesday. Still adjusting — that fourth-day fatigue that should be lifting and isn't quite. The day arranged itself around tomorrow.</p>
+
+        <p>Late morning, Mira and I out to Namba. Don Quijote first, omiyage for home. Then up the Shinsaibashi-suji shotengai to Parco — the arcade as crowded by daylight as it had been at night a few days ago.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-donki.jpeg" alt="Mira at Don Quijote Namba" />
+            <figcaption>Donki, Namba.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-dotonbori-selfie.jpeg" alt="Mira and Mikael in Dotonbori" />
+            <figcaption>Dotonbori, in the sun.</figcaption>
+          </figure>
+        </div>
+
+        <p>Up at Parco, the Donguri Republic on the upper floors — Jiji and Totoro and Howl all gathered politely on the shelves.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-ghibli.jpeg" alt="Mira at Donguri Republic Ghibli store" />
+            <figcaption>Donguri Republic, Parco.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-deer-wall.jpeg" alt="Selfie with a wall deer" />
+            <figcaption>A small deer in passing.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="photo-feature">
+          <img src="photo-bookstore.jpeg" alt="At the bookshelves" />
+          <figcaption>Among the books.</figcaption>
+        </figure>
+
+        <p>Back to Kujo by late afternoon. Out again with the parents — the local Kujo sennichi-doori shotengai at golden hour, lanterns warming up, the small Daiso a few doors down. The small things that always need picking up.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-kujo-sennichi-sunset.jpeg" alt="Kujo Sennichi-doori shotengai at sunset" />
+          <figcaption>九条千日通 · the local shotengai at golden hour.</figcaption>
+        </figure>
+
+        <figure class="photo-feature">
+          <img src="photo-dad-portrait.jpeg" alt="A profile portrait" />
+          <figcaption>Dad, in profile.</figcaption>
+        </figure>
+
+        <p>Cooked dinner at the apartment. After plates were cleared, the survey documents came out — the 1985 cadastral map of the property in Kitarokkō, Nishinomiya, triangulated measurements and the careful handwritten numbers from forty years ago. Tomorrow it all goes to Sanda.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-cadastral-map.jpeg" alt="Cadastral survey map of the Nishinomiya property" />
+          <figcaption>地積測量図 · 1985, the property in Kitarokkō.</figcaption>
+        </figure>
+
+        <div class="photo-closing">Bed early.</div>
+
+        <div class="marginalia">
+          <span class="label">tomorrow</span>
+          Drive to Sanda · settlement · Sandaya Honten for lunch
+        </div>
+      </div>
+    </article>
+
+    <!-- 14 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">14</div>
+        <div class="dow">Thu</div>
+        <div class="jp">木曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Settlement · the Matsui's · Kazumi-chan's</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → Sanda → Kobe-Kita → Kazumi-chan's</div>
+        <h3>Sanda · the settlement, and family</h3>
+
+        <p>Thursday. The day.</p>
+
+        <p>Up early to fetch the car at Toyota Namba — a white Crown with Naniwa plates, ready and polished. The drive back to Kujo turned into a small comedy of one-way streets that don't resolve into anything you can intuit. Eventually back to the house, collected the parents, and we set off.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-rental-crown.jpeg" alt="White Toyota Crown rental with Naniwa license plate" />
+          <figcaption>Naniwa 301 · the day's car.</figcaption>
+        </figure>
+
+        <p>Sanda Woodytown is an hour or so out of Osaka — kōsoku, then smaller country roads, the Japanese navigation alternately precise and inscrutable.</p>
+
+        <p>The settlement went well. A long stack of papers, every page initialed and stamped — there's something almost nostalgic about it after living in Finland, where everything is handled online. A breath of the nineties, all of it tangible.</p>
+
+        <p>Then off to Aeon Mall Kobe-Kita for a celebratory lunch with the Matsui's — we ended up at a Chinese place, drawn in by a display of takesumi-colored gyoza in bamboo-charcoal black, and a generous plate of dragon cha-han to share.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-takesumi-gyoza.jpeg" alt="Display of pan-fried gyoza in golden, charcoal-black, and other colors" />
+          <figcaption>黒いドラゴン餃子 · takesumi-charcoal gyoza on display.</figcaption>
+        </figure>
+
+        <p>The day ended at Kazumi-chan's house. The parents back among family. A celebratory dinner — mum's favourite oden, sushi enough for everyone. A small lit window above the door held a row of Moomin figurines, watching the evening: a piece of Finland sitting quietly in a Japanese house.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-kazumi-house.jpeg" alt="Kazumi-chan's house at night with a lit window of Moomin figurines" />
+          <figcaption>Kazumi-chan's, after dark. The Moomins watching.</figcaption>
+        </figure>
+
+        <figure class="photo-feature">
+          <img src="photo-sanda-night.jpeg" alt="Night canal with trees and distant lights in Sanda" />
+          <figcaption>Sanda at night, walking out.</figcaption>
+        </figure>
+
+        <div class="photo-closing">A long, full, important day.</div>
+      </div>
+    </article>
+
+    <!-- 15 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">15</div>
+        <div class="dow">Fri</div>
+        <div class="jp">金曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Nishinomiya · Tower vinyls · Molto!</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → Nishinomiya → Umeda</div>
+        <h3>Refiguring</h3>
+
+        <p>Friday. The day refigured itself overnight. Instead of going straight to the main post office for the international wire, we realised we needed dad's My Number first — that meant Nishinomiya shiyakusho. Mira stayed at the apartment to nurse a sore throat.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-koinobori.jpeg" alt="Koinobori carp streamer hanging on a Kujo residential building" />
+          <figcaption>鯉のぼり · still up on a Kujo balcony, a fortnight after Children's Day.</figcaption>
+        </figure>
+
+        <p>Nishinomiya City Hall sits beside a small grassy square — a quiet errand, a stamp, the document we needed. By mid-afternoon we were back in Kujo.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-nishinomiya-park.jpeg" alt="Grass square outside Nishinomiya City Hall on a clear day" />
+          <figcaption>Outside the shiyakusho.</figcaption>
+        </figure>
+
+        <p>Mira was already feeling better. Late sun coming down the shotengai, lanterns warming up, the street settling.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-kujo-sunset-late.jpeg" alt="Kujo Sennichi-doori shotengai with low sun at end of street" />
+            <figcaption>Kujo shotengai, sun at the end of it.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-sunset-selfie.jpeg" alt="Mira and Mikael at golden hour" />
+            <figcaption>Late light.</figcaption>
+          </figure>
+        </div>
+
+        <p>Out to Umeda Chayamachi for vinyls. The way there involved getting properly lost in the Hankyu Umeda underground — that mazelike system that promises an exit and keeps offering another corridor, indefinitely. We surfaced eventually. At Tower Records: Sakamoto and Matsubara on the shelves, both found. Small wins.</p>
+
+        <p>Nearby, a vintage shop swallowed an hour — amber lamps, racks of denim, mannequins in striped shirts, Mira looking up at something high on the wall.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-vintage-shop.jpeg" alt="Mira in a vintage clothing shop in Umeda Chayamachi" />
+          <figcaption>Chayamachi, an hour gone.</figcaption>
+        </figure>
+
+        <p>The day ended at Molto! View, the beer bar above the station — packed with salarymen marking Friday, beer and snacks at every table, all of Umeda lit up through the window: JR Osaka, Yodobashi, the towers beyond.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-molto-mira.jpeg" alt="Mira at Molto! View beer bar, black and white" />
+            <figcaption>Molto!</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-molto-view.jpeg" alt="Night view of Umeda from Molto! View beer bar" />
+            <figcaption>JR Osaka and Yodobashi from above.</figcaption>
+          </figure>
+        </div>
+
+        <div class="photo-closing">The day refigured itself. It found its own shape.</div>
+
+        <div class="marginalia">
+          <span class="label">noticed in passing</span>
+          BABY BODY BURGER · Burger King's five-patty 二代目 special, <em>officially sanctioned by the Japan Sumo Association</em> · ¥2,890
+          <div class="noticed-thumbs">
+            <figure><img src="photo-sumo-burger.jpeg" alt="Burger King BABY BODY BURGER poster" /></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 16 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">16</div>
+        <div class="dow">Sat</div>
+        <div class="jp">土曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">WakuWaku · Sumiyoshi · 藤五 · Den-Den</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kitakagaya → Kohama → Sumiyoshi → Namba → Den-Den</div>
+        <h3>Red steel, red bridge</h3>
+
+        <p>Saturday. The longest arc of the trip so far — south Osaka all morning and into the afternoon, back through Namba in the evening. More ground than any day since arrival, and somehow not tiring.</p>
+
+        <p>Yotsubashi line south to 北加賀屋 — Y20, the end of the morning's first transit. A quiet residential station, its walls illustrated like a children's storybook.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-kitakagaya-station.jpeg" alt="Kitakagaya Station sign on the Yotsubashi line, Y20" />
+          <figcaption>北加賀屋 Y20 · the morning's first stop.</figcaption>
+        </figure>
+
+        <p>Started at <em>枠枠</em> under the red steel frame at CCO Kitakagaya — an old shipyard truss painted oxide-red, holding a free outdoor block party humming below it. DJs who knew what they were doing: smooth pivots between genres, the kind of set that holds its own arc without ever announcing it.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-wakuwaku-cco.jpeg" alt="WakuWaku at CCO Kitakagaya, red steel frame overhead" />
+          <figcaption>赤鉄骨下 · 枠枠, mid-afternoon under the steel.</figcaption>
+        </figure>
+
+        <p>South from Kitakagaya into <em>粉浜商店街</em>, a quiet shotengai. Stumbled into 一光道具店, an antique shop with the kind of inventory you'd want a whole afternoon for. Further down the arcade, a small knife-sharpening shop under a navy noren — <em>研ぎ処 藤五</em>. The owner in indigo workwear, fifty years of patience behind him, walked us through stones and steels. Walked out with a santoku.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-togo-knife.jpeg" alt="With the knife maker at Togidokoro Togo in Kohama shotengai" />
+          <figcaption>研ぎ処 藤五 · the master and the santoku.</figcaption>
+        </figure>
+
+        <p>A few minutes further south to 住吉大社. The crowds thin the further south you go. At the entrance, a bronze 狛犬 holding the gate — copper greened by a century of weather, mouth open in 阿形.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-sumiyoshi-komainu.jpeg" alt="Bronze komainu guardian at Sumiyoshi Taisha" />
+          <figcaption>狛犬 · the guardian at the gate.</figcaption>
+        </figure>
+
+        <p>Inside the shrine grounds the famous 太鼓橋 — the sori-hashi — arched almost vertically over the pond, lacquered the same red family as the truss back at Kitakagaya. Mira up there in the pines, the bridge holding her like a stage prop.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-sumiyoshi-bridge.jpeg" alt="Mira on the red arched sori-hashi at Sumiyoshi Taisha" />
+          <figcaption>太鼓橋 · the sori-hashi.</figcaption>
+        </figure>
+
+        <p>Mira pulled a small white ceramic rabbit from the omikuji shelf — the slip rolled tight inside it. 第一番 大吉. <em>難波江の空にやどれる月を見て またすみのぼる我が心かな</em>.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-mira-usagi.jpeg" alt="Mira with the small white rabbit omikuji from Sumiyoshi Taisha" />
+            <figcaption>The 兎 in her palm.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-omikuji.jpeg" alt="The omikuji slip showing 第一番 大吉" />
+            <figcaption>第一番 大吉 · the best you can pull.</figcaption>
+          </figure>
+        </div>
+
+        <p>Lunch a few steps from the shrine at <em>タコリバ 住吉大社本店</em>, a takoyaki spot with Showa-era fittings — yellowing signage, folding stools you remember from somewhere even if you've never been there.</p>
+
+        <p>Back north on the Nankai, out into Namba Parks — that strange curved tower above the terraced gardens, surfacing in the late afternoon sun.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-namba-parks.jpeg" alt="Namba Parks tower in late afternoon" />
+          <figcaption>なんばパークス · the curved tower above the terraces.</figcaption>
+        </figure>
+
+        <p>East into Den-Den Town for a slow walk through the racks. <em>サウンドパック 日本橋四丁目店</em> — a small room of stacked cardboard boxes and tightly-packed shelves, a クラシック sign yellowing above, a Godzilla and a Yamato spaceship watching from the top corner. The find of the day: YMO's debut, ¥1,380 — Hosono, Takahashi and Sakamoto's faces tiled across the sleeve like a passport-photo grid. A whole soundscape for less than the price of a coffee back home.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-sound-pack-interior.jpeg" alt="Browsing records at Sound Pack Nipponbashi 4-chome" />
+            <figcaption>サウンドパック · the hunt.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-ymo-record.jpeg" alt="Yellow Magic Orchestra debut LP" />
+            <figcaption>Y.M.O. · the find.</figcaption>
+          </figure>
+        </div>
+
+        <p>Closed the day at <em>道頓堀クラフトビア醸造所</em> inside Namba CITY. Cold beer. Feet finally allowed to stop.</p>
+
+        <div class="photo-closing">The longest arc yet. A generous one.</div>
+
+        <div class="marginalia">
+          <span class="label">noticed in passing</span>
+          One of Osaka's 創作マンホール · the city duckling among cherry blossoms, half-faded into the pavement · and on a side wall around the corner, a Banksy-style stencil — kimono girl, paper umbrella, a tree bursting into hearts instead of petals
+          <div class="noticed-thumbs">
+            <figure><img src="photo-duck-manhole.jpeg" alt="Osaka creative manhole cover with yellow duckling and cherry blossoms" /></figure>
+            <figure><img src="photo-wall-stencil.jpeg" alt="Banksy-style stencil mural of kimono girl with red umbrella under a tree blossoming in pink hearts" /></figure>
+          </div>
+        </div>
+
+        <div class="marginalia">
+          <span class="label">to revisit</span>
+          一光道具店 in 粉浜 · the kind of antique shop you'd happily lose a Sunday in · <em>ikko-dogu.com</em>
+        </div>
+      </div>
+    </article>
+
+    <!-- 17 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">17</div>
+        <div class="dow">Sun</div>
+        <div class="jp">日曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">Kazumi · うめきた · 天満</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → Umeda → 天満 → Kujo</div>
+        <h3>The day before Yucho</h3>
+
+        <p>Sunday. The recharge day before the bank. Slept in. A taxi to Umeda rather than working the trains — the kind of decision that defines a Sunday on the road.</p>
+
+        <p>Met Kazumi-chan and Yu-kun at the station. A short detour into the supermarket, and the first quiet astonishment of the day: a tray of strawberries from Nara — 古都華, Kotoka — boxed like jewellery, each one placed by hand.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-kotoka-strawberries.jpeg" alt="Nara prefecture Kotoka strawberries in their packaging" />
+          <figcaption>奈良県産 古都華 · packed like jewellery.</figcaption>
+        </figure>
+
+        <p>Up to Daimaru 13F for the Pokémon Center Yu-kun had been looking forward to. A wall of children's voices, parents in tow — and a separate snaking queue of <em>gaijin</em> otaku at the registers that didn't seem to move. Mom, dad and Kazumi went a floor down for coffee while we tried. Twenty minutes in, we gave up. We'll try again Tuesday or Wednesday — a weekday should let the floor breathe.</p>
+
+        <p>After coffee, mom and dad took a taxi back to Kujo — enough foot mileage for one day. We carried on.</p>
+
+        <p>Mira had been hoping to taste proper mochi, so down to Hankyu B1F where Kazumi led the comparison — modern fruit-and-cream daifuku against the older kinako-and-mochi pairings. Both excellent. With Osaka heating up by midday, the ichigo daifuku took the round; the kinako can have its rematch in cooler weather.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-mochi-box.jpeg" alt="A boxed assortment of fresh daifuku mochi" />
+          <figcaption>Three contenders · the ichigo took the round.</figcaption>
+        </figure>
+
+        <p>Out into <em>うめきた公園</em>, the new strip of green between the station and Grand Front. Children splashing in the shallow water-court at the edge of the lawn. Beyond them, a soft swell of Arashi fans gathered for a closing-chapter memorial — grey idol bags, homemade uchiwa, the gathered weight of a band that meant a generation. Mira watched, half-bemused, half-moved. We found shade and a patch of grass, and the mochi box opened a second time.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-umekita-picnic.jpeg" alt="Sitting on the grass at Umekita Park with Kazumi" />
+            <figcaption>うめきた公園 · second opening of the mochi.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-umekita-park.jpeg" alt="Umekita Park scene with kids in the water court and the new pavilion behind" />
+            <figcaption>The Arashi crowd, the kids' pool, the new park.</figcaption>
+          </figure>
+        </div>
+
+        <p>Then Yodobashi, supposedly just to look. Came out with a Nikon Zfc that wasn't supposed to follow us home. (It did.)</p>
+
+        <figure class="photo-feature">
+          <img src="photo-osaka-station-bw.jpeg" alt="Black-and-white photo of an Osaka station platform in the late afternoon" />
+          <figcaption>Toward Tenma · the platform momentarily still.</figcaption>
+        </figure>
+
+        <p>JR loop line north to 天満. The light shifting toward evening, the elevated tracks throwing long shadows down the alleys, lanterns coming on one by one. A counter at <em>もつ焼き 独歩</em> for motsu and Kinmiya — shoulder-to-shoulder seating, skewers passed across the counter. Further along the run, kushi places: fried konbu, beef tendon, chicken breast, and the dip-once rule on the sauce — classically, beautifully Osakan.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-motsuyaki-doppo.jpeg" alt="At the entrance of Motsuyaki Doppo in Tenma" />
+          <figcaption>もつ焼き 独歩 · Tenma's first stop.</figcaption>
+        </figure>
+
+        <p>The last stop was a sumi-grill spot a few corners over — a konro brought hot to the counter, shochu rounds with lychee and shiso, an umeshu, the obligatory nama. The kind of long, slow evening where one drink folds into the next.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-sumi-grill-konro.jpeg" alt="A charcoal konro grill at the counter of a Tenma sumi-grill bar" />
+          <figcaption>炭火 · the konro at the counter.</figcaption>
+        </figure>
+
+        <p>The talk drifted to Japan and Finland — how far apart the two are by every metric except the ones that matter. Sauna and sentō. The space given to silence. Respect for craft over speed. Kazumi laid out Wednesday in advance: Kyoto, kimonos, temples at her unhurried pace.</p>
+
+        <div class="photo-closing">Recharged. Yucho tomorrow.</div>
+      </div>
+    </article>
+
+    <!-- 18 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">18</div>
+        <div class="dow">Mon</div>
+        <div class="jp">月曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">ゆうちょ · 解約 · お初</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → ゆうちょ大阪支店 → Kujo → 露天神社</div>
+        <h3>Yucho · 解約, and Ohatsu</h3>
+
+        <p>Monday. The bank day. <em>ゆうちょ大阪支店</em> inside the central post office, dad with the 通帳 and 届出印 in hand, the 相談シート in his pocket, the four sequenced asks rehearsed.</p>
+
+        <p>The hard answer arrived early in the conversation. ゆうちょ is the strictest of Japan's banks: domestic only, full stop. No 国際送金. No instruments that carry money abroad. No accounts at all for anyone without a registered Japanese domicile. The careful sequence we'd prepared had nowhere to escalate — the path through the post bank doesn't exist anymore. There was nothing to negotiate.</p>
+
+        <p>Only one option remained: close the account, take the proceeds in cash, declare them at customs on both ends. The 通帳 came back across the counter with a red <em>解約</em> stamp dated 8.5.18. The cash came back in counted bands. Walked out into the lunchtime crowd quieter than we'd walked in.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-yucho-kaiyaku.jpeg" alt="The closed Yucho bankbook stamped 解約" />
+          <figcaption>解約 · 8.5.18 · the line drawn.</figcaption>
+        </figure>
+
+        <p>Back to Kujo. Spread the customs paperwork across the kitchen table — Japan's outbound declaration on one side, Finland's inbound on the other. The forms want every figure, every source, every signature. By the time the last box was ticked the afternoon had used itself up.</p>
+
+        <p>To shake it off — and because Umeda holds more than the bank — we went to find <em>お初天神</em>, the shrine of Ohatsu, tucked into the office-tower grid above Sonezaki. The official name is <em>露天神社</em>. The popular one remembers Ohatsu and Tokubei, the lovers from Chikamatsu's 1703 puppet play, who walked to this shrine and died together for the sake of debts that wouldn't be paid. The ema racks now hang heavy with heart-shaped tablets.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-ohatsu-shrine-towers.jpeg" alt="The Ohatsu Tenjin shrine roof against the Umeda skyscrapers at dusk" />
+            <figcaption>お初天神 · the old roof, the new towers.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-ohatsu-tokubei-tale.jpeg" alt="The tale of Ohatsu and Tokubei panel at the shrine" />
+            <figcaption>お初と徳兵衛の物語 · the love-suicide tale.</figcaption>
+          </figure>
+        </div>
+
+        <p>Bowed. Tossed a coin. Stood under the eaves for a minute and let the Umeda traffic flow past on three sides. It's the kind of shrine that exists by being smaller than the buildings around it — proof that something can be both engulfed and intact.</p>
+
+        <div class="photo-closing">解約. Cash in hand. The shrine still standing in the towers.</div>
+      </div>
+    </article>
+
+    <!-- 19 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">19</div>
+        <div class="dow">Tue</div>
+        <div class="jp">火曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">戸籍 · Nara · 九条</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → 西宮市役所 → Umeda → Kujo</div>
+        <h3>Nishinomiya · 戸籍, and Kujo Kimi</h3>
+
+        <p>Tuesday. The plan had been Kobe — beef, Kitano, the koseki errand as a side stop. The koseki errand turned out to be the day.</p>
+
+        <p>Hanshin to <em>西宮市役所</em>, 戸籍住民課 on the first floor. The 窓口 clerks were generous with their time and quickly clarified the path: the municipality only keeps the records — the actual discussion for adding Asa to dad's koseki has to be with the <em>法務局</em>, the Legal Affairs Bureau. Reconnaissance only, as planned, but a clean next handle for the Helsinki-side process.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-koseki-form.jpeg" alt="The 戸籍 certificate application form filled out at Nishinomiya City Hall, with Finland written in the address line" />
+          <figcaption>西宮市役所 · the request, with Finland in the address line.</figcaption>
+        </figure>
+
+        <p>Since we were there, we asked if they could pull whatever Kawamura records the archives still held. The clerks took the question seriously and went looking. Past dad's line, past おじいちゃん Keinosuke, into the koseki of 曾祖父 河村 森次郎 — Morijirō — with his wife トメ at the heart of the household. Brush-written, vertical-format, the kind of record made when the country was still organising itself in ink and hanko.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-morijiro-koseki.jpeg" alt="The great-grandfather Morijirō's handwritten family register, vertical brushwork" />
+          <figcaption>曾祖父 森次郎 &amp; トメの戸籍 · brush, ink, four generations back.</figcaption>
+        </figure>
+
+        <p>And the quiet revelation in the columns: the Kawamuras were from <em>Nara</em>. Osaka was a later move, a chapter rather than the origin. Dad had a vague sense, but seeing the brush-written entries made it concrete — the original 本籍 written in characters that haven't been used in everyday signage for a hundred years.</p>
+
+        <p>The archive dive ate the morning and the early afternoon. Kobe — beef, Kitano — gave way without much regret. Hanshin back to Umeda and into Lucua instead, where Mira found a small AI robot we'll meet properly once it's plugged in at home.</p>
+
+        <p>Dinner in our own neighbourhood at last — <em>九条 きみ</em> on 1-6-8 — local okonomiyaki at the counter, parents settling in under the wall of photo-menus, the AC humming over the teppan. The kind of place that's been here long enough that the regulars don't look up when foreigners walk in.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-kujo-kimi-parents.jpeg" alt="Mikael's parents at the counter of Kujo Kimi okonomiyaki restaurant, black and white" />
+          <figcaption>九条 きみ · the parents settled in, our local at last.</figcaption>
+        </figure>
+
+        <div class="photo-closing">From Nara, after all. Dinner around the corner.</div>
+      </div>
+    </article>
+
+    <!-- 20 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">20</div>
+        <div class="dow">Wed</div>
+        <div class="jp">水曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">着物 · 八坂 · 清水 · 茶道</span>
+        <div class="entry-weather"><span class="jp">晴れ</span>Kujo → 河原町 → 八坂神社 → 清水寺 → Kujo</div>
+        <h3>Kyoto · 着物, and obasan's tea set</h3>
+
+        <p>Wednesday. The Kyoto day, planned and choreographed by Kazumi from end to end. Our only job was to be present.</p>
+
+        <p>Hankyu from Umeda — the deep maroon carriages that feel like a different era the moment you step into them. Nakamura-no obasan joined us at 洛西口, settling into the family group as if she'd always been part of the cast.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-hankyu-maroon.jpeg" alt="A deep maroon Hankyu train at Osaka Umeda station" />
+            <figcaption>阪急 · the maroon carriages, Kyoto-bound.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-train-family.jpeg" alt="Family seated together on the Hankyu train, black and white" />
+            <figcaption>車内 · the family at ease.</figcaption>
+          </figure>
+        </div>
+
+        <p>At the kimono rental shop near 河原町, everything had been arranged ahead of us. We picked what we liked — Mira in blue-and-white florals with a red obi, mine a deep teal — and the rest was theirs to do. Folding, tying, tucking. The kind of expertise that turns dressing into a brief ritual.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-kimono-fitting.jpeg" alt="Mira getting fitted in a purple floral kimono by the shop staff" />
+            <figcaption>Fitting · trial layers.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-kimono-master.jpeg" alt="The elderly kimono shop master seated among hanging kimonos, black and white" />
+            <figcaption>The shop master · in his own.</figcaption>
+          </figure>
+        </div>
+
+        <p>Seven of us out on the street in 着物 — Kazumi, Yu-kun, Nakamura-no obasan, mom and dad, Mira and me. Drew smiles from passersby. The sneakers under our hems gave us away as visitors; nobody seemed to mind.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-seven-kimono.jpeg" alt="The family group of seven in kimono standing outside the rental shop" />
+          <figcaption>Seven of us in 着物 · outside the shop.</figcaption>
+        </figure>
+
+        <p>Walked up to <em>八坂神社</em>. From there the group split — parents and obasan to a quieter spot for tea, Mira, Kazumi, Yu-kun and I onward toward 清水寺. A brisk walk uphill under the scorching Kyoto sun. Stopped briefly in a quiet garden along the way for photos.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-mira-obasan-yasaka.jpeg" alt="Mira and Nakamura obasan in kimono in front of Yasaka Shrine" />
+            <figcaption>八坂神社 · Mira and Nakamura-no obasan.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-garden-kiss.jpeg" alt="Mira leaning in to kiss Mikael in a garden, both in kimono" />
+            <figcaption>Garden quiet · the moment before the climb.</figcaption>
+          </figure>
+        </div>
+
+        <p>清水-dera at the top — the famous <em>舞台</em> cantilevered out over the slope, the long view east toward the Higashiyama hills. Photos at the veranda, every direction full of couples in 着物 chasing the same shot.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-kiyomizu-selfie.jpeg" alt="Mikael and Mira selfie at Kiyomizu-dera, both in kimono" />
+            <figcaption>清水の舞台 · the view, the heat, us in 着物.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-pagoda-yuzu.jpeg" alt="A three-story pagoda with a yuzu citrus tree in the foreground" />
+            <figcaption>三重塔と 柚子 · classic Kyoto verticality.</figcaption>
+          </figure>
+        </div>
+
+        <p>Climbed down into Maccha House for the cooldown — matcha pizza, matcha drinks, matcha-flecked everything. Slightly absurd, perfectly cooling.</p>
+
+        <p>Further down the slope, a tiny old-things shop pulled us in for a few minutes — and the day's vinyl haul: Anri's <em>Timely!!</em> and a <em>Funky Stuff</em> LP, both at prices that felt almost generous.</p>
+
+        <p>Returned the kimonos, then over to Nakamura-no obasan's home for a long cool-down — and the day's quietest moment. She presented Mira with a tea-ceremony starter set: a ninety-year-old <em>扇子</em>, with the bowls and utensils to begin practice. The kind of gift that arrives both as object and as invitation.</p>
+
+        <p>It looks like Mira may have just begun a long path with <em>茶道</em> — 裏千家 or 表千家, decision pending.</p>
+
+        <div class="photo-closing">Seven in 着物. A tea set, and a path beginning.</div>
+      </div>
+    </article>
+
+    <!-- 21 MAY -->
+    <article class="entry">
+      <div class="entry-date">
+        <div class="num">21</div>
+        <div class="dow">Thu</div>
+        <div class="jp">木曜</div>
+      </div>
+      <div class="entry-body">
+        <div class="hanko">記</div>
+        <span class="entry-tag">帰国 · KIX → HEL · 北極</span>
+        <div class="entry-weather"><span class="jp">曇り → 雲海 → cold</span>Kujo → Umeda → KIX → HEL</div>
+        <h3>Home · 帰国, and the two customs halls</h3>
+
+        <p>Thursday. The last day. Packed the Kujo Airbnb in the kind of quiet that only departure mornings have.</p>
+
+        <p>Called a taxi for the parents and the suitcases over to the APA Hotel, where Yu-kun had booked a day room. The self check-in machines did their usual painful work, but we got them settled on the 23rd floor and exhaled.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-apa-skyline-osaka.jpeg" alt="View of overcast Osaka cityscape from APA Hotel 23rd floor window" />
+          <figcaption>23階 · the Osaka sky on departure day.</figcaption>
+        </figure>
+
+        <p>Mira and I peeled off for Shake Shack at Umeda and one last gift run. The kind of small Western indulgence that feels right exactly once on a trip, and only on the last day.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-mira-shake-shack.jpeg" alt="Mira holding a green Shake Shack straw at the Umeda store, with burgers and cheese fries on the tray" />
+          <figcaption>Shake Shack · Umeda · the green straw celebration.</figcaption>
+        </figure>
+
+        <p>Tea and a matcha roll cake afterwards — the last slow moment in Japan. A green-tea sponge with a single dried bloom on top. Eaten without urgency.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-matcha-tea.jpeg" alt="Glass cup of green tea on a black tray" />
+            <figcaption>煎茶 · in the glass cup.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-matcha-roll.jpeg" alt="A slice of matcha roll cake on a black plate with a single pink dried bloom on top" />
+            <figcaption>抹茶ロール · the last slow bite.</figcaption>
+          </figure>
+        </div>
+
+        <p>Met Kazumi and Yu-kun afterwards. They took Mira to pick up the last pieces of her tea-ceremony kit while I went back to collect the parents from the APA. Reconvened at the Hankyu airport bus terminal — the Go app refused the destination for reasons it wouldn't explain, but we made it work. Final farewells. Then the rainy congested highway south to KIX.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-fj40-bus-glass.jpeg" alt="A vintage blue Toyota Land Cruiser FJ40 diesel seen through the rainy bus window on the way to KIX" />
+          <figcaption>KIX 行き · a vintage Land Cruiser through the bus window.</figcaption>
+        </figure>
+
+        <p>Customs at KIX went unexpectedly smoothly. Officers respectful, questions measured, the whole inspection feeling — as I'd hoped but hadn't quite expected — ceremonial. A significant border being crossed by a family carrying significant paperwork, and the form being held with care.</p>
+
+        <p>The new KIX lounge upstairs offered a comfortable wait. The terminal restaurants might have been the better choice for food, but the lounge was included — and after the morning's logistics, a quiet seat was worth more than dinner.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-mom-kix-lounge.jpeg" alt="Mom seated in the KIX departure lounge with international departures board visible on the wall" />
+          <figcaption>KIX ラウンジ · the wait, with departures board.</figcaption>
+        </figure>
+
+        <p>AY068 lifted from KIX on time. The two of us got an upgrade — Mira and me in seats close by to the parents, all four with the longer legroom and the better screens for the long northward arc.</p>
+
+        <p>The route runs north over Siberia, across the polar cap, down through the Norwegian Sea. The flight-path screen showed the plane suspended above the Arctic, ground speed 926 km/h. Outside the window, ten kilometres of air and then ice.</p>
+
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-mira-business-class.jpeg" alt="Mira in the Finnair business class seat, smiling with a peace sign, pink shirt" />
+            <figcaption>離陸 · Mira, headed home.</figcaption>
+          </figure>
+          <figure>
+            <img src="photo-north-pole-map.jpeg" alt="Flight path screen showing the plane over the Arctic between Osaka and Helsinki, ground speed 926 km/h" />
+            <figcaption>北極 · 926 km/h, ten kilometres above ice.</figcaption>
+          </figure>
+        </div>
+
+        <p>Breakfast served somewhere over Finnish Lapland — the map showing Helsinki ahead, Murmansk to the right, the descent already begun.</p>
+
+        <figure class="photo-feature">
+          <img src="photo-finnair-breakfast-lapland.jpeg" alt="Finnair business class breakfast tray with seatback screen showing the flight path over northern Scandinavia approaching Helsinki" />
+          <figcaption>朝食 · Lapland through the screen.</figcaption>
+        </figure>
+
+        <p>Helsinki on the ground was a different climate. Finnish customs slow and cold — efficient enough but procedural, with no acknowledgment that what had just been crossed might be anything more than a list of declarations. A sharp contrast against KIX's ceremonial register the night before. The cross-cultural family lives in exactly this contrast — two countries, two procedural temperatures, the same paperwork carrying different weight at each end.</p>
+
+        <div class="photo-closing">Home. The journal closes here.</div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- COMING UP -->
+  <div class="section-head">
+    <span class="num">III</span>
+    <h2>Coming up</h2>
+    <span class="jp">これから..?</span>
+  </div>
+  <div class="upcoming">
+    <div class="upcoming-item">
+      <div class="u-text" style="font-style: italic; opacity: 0.7;">All twelve days logged. The journal is complete.</div>
+    </div>
+  </div>
+
+  <div class="flourish">・ ・ ・</div>
+
+  <footer>
+    <div>Completed 21 May 2026 · Twelve days</div>
+    <div class="seal">旅日記</div>
+  </footer>
+
+</div>
+</body>
+</html>
